@@ -1,6 +1,6 @@
 #! /bin/bash
 branch="20201208/main"
-BuilderKernel="00000"
+BuilderKernel="gcc
 
 . main.sh 'initial' 'full'
 
