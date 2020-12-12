@@ -1,6 +1,6 @@
 #! /bin/bash
 branch="20201208/main"
-BuilderKernel="00000"
+BuilderKernel="dtc"
 
 if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$BuilderKernel" != "gcc" ] ;then
     exit;
