@@ -171,17 +171,17 @@ tg_send_files(){
         chmod +x run.sh
         . run.sh "$KernelFiles" "x01bd" "$(date +"%m-%d-%Y")" "$FolderUp"
         cd $currentFolder
+        if [ ! -z "$1" ];then
+            tg_send_info "$MSG" "$1"
+        else
+            tg_send_info "$MSG"
+        fi
     else
         curl --progress-bar -F document=@"$KernelFiles" "https://api.telegram.org/bot$BOT_TOKEN/sendDocument" \
         -F chat_id="$SaveChatID"  \
         -F "disable_web_page_preview=true" \
         -F "parse_mode=html" \
         -F caption="$MSG"
-        if [ ! -z "$1" ];then
-            tg_send_info "$MSG" "$1"
-        else
-            tg_send_info "$MSG"
-        fi
     fi
 
     # remove files after build done
