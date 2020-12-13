@@ -32,7 +32,7 @@ function make_changes() {
 }
 
 ListBranch=""
-for Files in do-main do-df-keqing do-df-mona do-qk-l do-qk-n do-tercydux-hareudang do-tercydux-santuy do-tercydux-tiris
+for Files in do-stock
 do
     if [ "$TAGS" == "all" ];then
         if [[ -e ${Files}.sh ]];then

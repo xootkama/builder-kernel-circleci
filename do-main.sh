@@ -1,30 +1,17 @@
 #! /bin/bash
-branch="20201208/main"
+branch="20201110/main"
 BuilderKernel="00000"
-
 if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$BuilderKernel" != "gcc" ] ;then
     exit;
 fi
+
 . main.sh 'initial' 'full'
+export KBUILD_BUILD_VERSION=9
 
-FolderUp="BrokenNucleus"
-spectrumFile="f.rc"
-TypeBuild="Stable"
-TypeBuildTag="AOSP"
+spectrumFile=""
+TypeBuild="MAIN-TEST"
+TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
+FolderUp=""
 
 CompileKernel
-CompileKernel "65"
-# CompileKernel "68"
-# CompileKernel "71"
-# CompileKernel "72"
-
-FixPieWifi
-
-CompileKernel
-CompileKernel "65"
-# CompileKernel "68"
-# CompileKernel "71"
-# CompileKernel "72"
-
-tg_send_info "All $GetKernelName $BuilderKernel already uploaded to Gdrive :D"
