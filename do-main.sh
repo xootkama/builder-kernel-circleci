@@ -5,7 +5,7 @@ if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$Build
     exit;
 fi
 
-. main.sh 'initial' 'full'
+. main.sh 'initial'
 export KBUILD_BUILD_VERSION=9
 
 spectrumFile=""
