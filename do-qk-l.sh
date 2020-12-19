@@ -10,6 +10,7 @@ TypeBuild="Stock-LMK"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="bego-qk"
+ExFolder="L"
 
 CompileKernel
 pullLmk
