@@ -9,6 +9,6 @@ spectrumFile="bego-on-p.rc"
 TypeBuild="Personal-Stable"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="DF"
+FolderUp="bego-df"
 
 CompileKernel

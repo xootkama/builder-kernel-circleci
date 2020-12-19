@@ -9,7 +9,7 @@ spectrumFile="bego-on.rc"
 TypeBuild="Stock-LMK"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="QK"
+FolderUp="bego-qk"
 
 CompileKernel
 pullLmk

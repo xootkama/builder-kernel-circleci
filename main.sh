@@ -102,7 +102,8 @@ if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
     TotalCores=$(nproc --all)
     TypeBuildTag="AOSP-CFW"
     FullLto="Nope"
-    FolderUp=""
+    FolderUp="begonia"
+    ExFolder=""
     export KBUILD_BUILD_USER="ZyCromerZ"
     export KBUILD_BUILD_HOST="Circleci-server"
     if [ "$BuilderKernel" == "gcc" ];then
@@ -165,7 +166,7 @@ tg_send_files(){
         currentFolder="$(pwd)"
         cd $GdriveDir
         chmod +x run.sh
-        . run.sh "$KernelFiles" "begonia" "$(date +"%m-%d-%Y")" "$FolderUp"
+        . run.sh "$KernelFiles" "$FolderUp" "$(date +"%m-%d-%Y")" "$ExFolder"
         cd $currentFolder
 
         if [ ! -z "$1" ];then

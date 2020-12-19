@@ -12,6 +12,5 @@ spectrumFile=""
 TypeBuild="MAIN-TEST"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp=""
 
 CompileKernel
