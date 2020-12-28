@@ -1,6 +1,6 @@
 #! /bin/bash
 branch="20201110/df-keqing"
-BuilderKernel="00000"
+BuilderKernel="dtc"
 
 . main.sh 'initial'
 export KBUILD_BUILD_VERSION=7
