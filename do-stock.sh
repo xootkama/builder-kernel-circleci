@@ -9,5 +9,6 @@ spectrumFile="none"
 TypeBuild="STOCK"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
+FolderUp="bego-stock"
 
 CompileKernel
