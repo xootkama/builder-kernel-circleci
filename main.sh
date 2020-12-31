@@ -67,21 +67,27 @@ if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
         getInfo ">> cloning DragonTC clang 8 . . . <<"
         git clone https://github.com/nibaji/DragonTC-8.0 -b master $clangDir --depth=1
     fi
-    if [ "$BuilderKernel" == "gcc" ];then
-        getInfo ">> cloning gcc google prebuilt aarch64 . . . <<"
-        git clone https://github.com/ZyCromerZ/aarch64-linux-android-4.9/ -b android-10.0.0_r47 $gcc64Dir --depth=1
-        getInfo ">> cloning gcc google prebuilt arm . . . <<"
-        git clone https://github.com/ZyCromerZ/arm-linux-androideabi-4.9/ -b android-10.0.0_r47 $gcc32Dir --depth=1
-        for64=aarch64-linux-android
-        for32=arm-linux-androideabi
-    else
-        getInfo ">> cloning gcc 10.2.0 aarch64 . . . <<"
-        git clone https://github.com/ZyCromerZ/aarch64-linux-gnu-1 -b stable-gcc $gcc64Dir --depth=1
-        getInfo ">> cloning gcc 10.2.0 arm . . . <<"
-        git clone https://github.com/ZyCromerZ/arm-linux-gnueabi -b stable-gcc $gcc32Dir --depth=1
-        for64=aarch64-linux-gnu
-        for32=arm-linux-gnueabi
-    fi
+    # if [ "$BuilderKernel" == "gcc" ];then
+        mkdir $gcc64Dir
+        mkdir $gcc32Dir
+        getInfo ">> get gcc 10.0.2 arm linaro . . . <<"
+        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz
+        tar -xf gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz -C $gcc32Dir
+        gcc32Dir=$mainDir/gcc32/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi
+        getInfo ">> get gcc 10.0.2 aarch64 linaro . . . <<"
+        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu.tar.xz
+        tar -xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu.tar.xz -C $gcc64Dir
+        gcc64Dir=$mainDir/gcc64/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu
+        for64=aarch64-none-linux-gnu
+        for32=arm-none-eabi
+    # else
+    #     getInfo ">> cloning gcc 10.2.0 aarch64 . . . <<"
+    #     git clone https://github.com/ZyCromerZ/aarch64-linux-gnu-1 -b stable-gcc $gcc64Dir --depth=1
+    #     getInfo ">> cloning gcc 10.2.0 arm . . . <<"
+    #     git clone https://github.com/ZyCromerZ/arm-linux-gnueabi -b stable-gcc $gcc32Dir --depth=1
+    #     for64=aarch64-linux-gnu
+    #     for32=arm-linux-gnueabi
+    # fi
     getInfo ">> cloning Anykernel . . . <<"
     git clone https://github.com/ZyCromerZ/AnyKernel3 -b master-begonia $AnykernelDir --depth=1
     getInfo ">> cloning Spectrum . . . <<"
