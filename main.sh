@@ -22,7 +22,9 @@
 # - branch
 # - spectrumFile
 # Then call CompileKernel and done
-
+if [ $CIRCLE_BRANCH == 'master' ];then
+    exit
+fi
 getInfo() {
     echo -e "\e[1;32m$*\e[0m"
 }
@@ -366,7 +368,7 @@ changeGcc()
     fi
     if [ "$cuR" != "$for64" ];then
         rm -rf $gcc32Dir $gcc64Dir
-        if [ "$BuilderKernel" == "gcc" ];then
+        if [ "$BuilderKernel" != "gcc" ];then
             getInfo ">> cloning gcc 10.2.0 aarch64 . . . <<"
             git clone https://github.com/ZyCromerZ/aarch64-linux-gnu-1 -b stable-gcc $gcc64Dir --depth=1
             getInfo ">> cloning gcc 10.2.0 arm . . . <<"
@@ -394,11 +396,11 @@ changeClang()
 {
     cd $clangDir
     if [ "$BuilderKernel" == "clang" ];then
-        git fetch https://github.com/ZyCromerZ/google-clang -b 9.0.4-r353983d --depth=1
+        git fetch https://github.com/ZyCromerZ/google-clang 9.0.4-r353983d --depth=1
         git checkout FETCH_HEAD
     fi
     if [ "$BuilderKernel" == "dtc" ];then
-        git fetch  https://github.com/nibaji/DragonTC-8.0 -b master --depth=1
+        git fetch  https://github.com/nibaji/DragonTC-8.0 master --depth=1
         git checkout FETCH_HEAD
     fi
     
