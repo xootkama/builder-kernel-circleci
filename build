@@ -28,9 +28,9 @@ function update_fileB() {
 }
 function make_changes() {
     git checkout master && git checkout -b $1-$2
-    git checkout $1-$2 && update_fileB "00000" "$2" "./$1.sh" && update_file 'do-main.sh' "$1.sh" './.circleci/config.yml'
+    git checkout $1-$2 && update_file 'do-main.sh' "$1.sh" './.circleci/config.yml'
 }
-
+TAGS="clang"
 ListBranch=""
 for Files in do-df-keqing do-df-mona do-qk-l do-qk-n do-tercydux-hareudang do-tercydux-santuy do-tercydux-tiris
 do
@@ -55,5 +55,9 @@ do
         fi
     fi
 done
-
-git push -f origin $ListBranch
+if [ ! -z "$1" ];then
+    SetRemote="$1"
+else
+    SetRemote="origin"
+fi
+git push -f $SetRemote $ListBranch

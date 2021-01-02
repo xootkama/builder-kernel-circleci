@@ -71,15 +71,15 @@ if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
         mkdir $gcc64Dir
         mkdir $gcc32Dir
         getInfo ">> get gcc 10.0.2 arm linaro . . . <<"
-        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz
-        tar -xf gcc-arm-10.2-2020.11-x86_64-arm-none-eabi.tar.xz -C $gcc32Dir
-        gcc32Dir=$mainDir/gcc32/gcc-arm-10.2-2020.11-x86_64-arm-none-eabi
+        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz
+        tar -xf gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz -C $gcc32Dir
+        gcc32Dir=$mainDir/gcc32/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf
         getInfo ">> get gcc 10.0.2 aarch64 linaro . . . <<"
-        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu.tar.xz
-        tar -xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu.tar.xz -C $gcc64Dir
-        gcc64Dir=$mainDir/gcc64/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu
-        for64=aarch64-none-linux-gnu
-        for32=arm-none-eabi
+        wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz
+        tar -xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz -C $gcc64Dir
+        gcc64Dir=$mainDir/gcc64/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf
+        for64=aarch64-none-elf
+        for32=arm-none-linux-gnueabihf
     else
         getInfo ">> cloning gcc 10.2.0 aarch64 . . . <<"
         git clone https://github.com/ZyCromerZ/aarch64-linux-gnu-1 -b stable-gcc $gcc64Dir --depth=1
@@ -352,6 +352,77 @@ pullSlmk(){
     git pull --no-commit origin 20201110/main-SLMK
     git commit -s -m 'Pull branch 20201110/main-SLMK'
     TypeBuild="SLMK"
+}
+
+changeGcc()
+{
+    cd $kernelDir
+    git reset --hard origin/$branch
+    rm -rf out
+    if [ "$BuilderKernel" == "gcc" ];then
+        cuR=aarch64-linux-gnu
+    else
+        cuR=aarch64-none-elf
+    fi
+    if [ "$cuR" != "$for64" ];then
+        rm -rf $gcc32Dir $gcc64Dir
+        if [ "$BuilderKernel" == "gcc" ];then
+            getInfo ">> cloning gcc 10.2.0 aarch64 . . . <<"
+            git clone https://github.com/ZyCromerZ/aarch64-linux-gnu-1 -b stable-gcc $gcc64Dir --depth=1
+            getInfo ">> cloning gcc 10.2.0 arm . . . <<"
+            git clone https://github.com/ZyCromerZ/arm-linux-gnueabi -b stable-gcc $gcc32Dir --depth=1
+            for64=aarch64-linux-gnu
+            for32=arm-linux-gnueabi
+        else
+            mkdir $gcc64Dir
+            mkdir $gcc32Dir
+            getInfo ">> get gcc 10.0.2 arm linaro . . . <<"
+            wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz
+            tar -xf gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf.tar.xz -C $gcc32Dir
+            gcc32Dir=$mainDir/gcc32/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf
+            getInfo ">> get gcc 10.0.2 aarch64 linaro . . . <<"
+            wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-a/10.2-2020.11/binrel/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz
+            tar -xf gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf.tar.xz -C $gcc64Dir
+            gcc64Dir=$mainDir/gcc64/gcc-arm-10.2-2020.11-x86_64-aarch64-none-elf
+            for64=aarch64-none-elf
+            for32=arm-none-linux-gnueabihf
+        fi
+    fi
+}
+
+changeClang()
+{
+    cd $clangDir
+    if [ "$BuilderKernel" == "clang" ];then
+        git fetch https://github.com/ZyCromerZ/google-clang -b 9.0.4-r353983d --depth=1
+        git checkout FETCH_HEAD
+    fi
+    if [ "$BuilderKernel" == "dtc" ];then
+        git fetch  https://github.com/nibaji/DragonTC-8.0 -b master --depth=1
+        git checkout FETCH_HEAD
+    fi
+    
+    if [ "$BuilderKernel" == "gcc" ];then
+        ClangType="$($gcc64Dir/bin/$for64-gcc --version | head -n 1)"
+    else
+        ClangType="$($clangDir/bin/clang --version | head -n 1)"
+    fi
+    KBUILD_COMPILER_STRING="$ClangType"
+    if [ -e $gcc64Dir/bin/$for64-gcc ];then
+        gcc64Type="$($gcc64Dir/bin/$for64-gcc --version | head -n 1)"
+    else
+        cd $gcc64Dir
+        gcc64Type=$(git log --pretty=format:'%h: %s' -n1)
+        cd $mainDir
+    fi
+    if [ -e $gcc32Dir/bin/$for32-gcc ];then
+        gcc32Type="$($gcc32Dir/bin/$for32-gcc --version | head -n 1)"
+    else
+        cd $gcc32Dir
+        gcc32Type=$(git log --pretty=format:'%h: %s' -n1)
+        cd $mainDir
+    fi
+    cd $kernelDir
 }
 
 getInfo 'include main.sh success'

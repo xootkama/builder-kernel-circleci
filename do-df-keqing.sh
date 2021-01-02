@@ -1,6 +1,6 @@
 #! /bin/bash
 branch="20201110/df-keqing"
-BuilderKernel="00000"
+BuilderKernel="clang"
 
 . main.sh 'initial'
 export KBUILD_BUILD_VERSION=7
@@ -10,5 +10,17 @@ TypeBuild="Personal-Stable"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="bego-df"
+
+CompileKernel
+
+BuilderKernel="dtc"
+changeGcc
+changeClang
+
+CompileKernel
+
+BuilderKernel="gcc"
+changeGcc
+changeClang
 
 CompileKernel
