@@ -362,9 +362,9 @@ changeGcc()
     git reset --hard origin/$branch
     rm -rf out
     if [ "$BuilderKernel" == "gcc" ];then
-        cuR=aarch64-linux-gnu
-    else
         cuR=aarch64-none-elf
+    else
+        cuR=aarch64-linux-gnu
     fi
     if [ "$cuR" != "$for64" ];then
         rm -rf $gcc32Dir $gcc64Dir
