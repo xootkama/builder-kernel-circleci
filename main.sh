@@ -302,9 +302,11 @@ CompileKernel(){
         [[ "$BuilderKernel" == "clang" ]] && TypeBuilder="Clang"
         [[ "$BuilderKernel" == "dtc" ]] && TypeBuilder="DTC"
         if [ $TypeBuild == "Stable" ];then
-            ZipName="[$GetBD][$TypeBuilder][$TypeBuildTag][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
+            # ZipName="[$GetBD][$TypeBuilder][$TypeBuildTag][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
+            ZipName="[$TypeBuilder][$TypeBuildTag][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
         else
-            ZipName="[$GetBD][$TypeBuilder][$TypeBuildTag][$TypeBuild][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
+            # ZipName="[$GetBD][$TypeBuilder][$TypeBuildTag][$TypeBuild][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
+            ZipName="[$TypeBuilder][$TypeBuildTag][$TypeBuild][$CODENAME]$KVer-$KName-$HeadCommitId.zip"
         fi
         # RealZipName="[$GetBD]$KVer-$HeadCommitId.zip"
         RealZipName="$ZipName"

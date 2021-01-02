@@ -19,6 +19,7 @@ pullSlmk
 CompileKernel
 
 BuilderKernel="dtc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
@@ -29,6 +30,7 @@ pullSlmk
 CompileKernel
 
 BuilderKernel="gcc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
