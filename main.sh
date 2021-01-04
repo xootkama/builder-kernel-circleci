@@ -25,6 +25,9 @@
 if [ $CIRCLE_BRANCH == 'master' ];then
     exit
 fi
+if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$BuilderKernel" != "gcc" ] ;then
+    exit
+fi
 getInfo() {
     echo -e "\e[1;32m$*\e[0m"
 }

@@ -1,9 +1,6 @@
 #! /bin/bash
 branch="20201110/main"
 BuilderKernel="clang"
-if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$BuilderKernel" != "gcc" ] ;then
-    exit;
-fi
 
 . main.sh 'initial'
 export KBUILD_BUILD_VERSION=9
