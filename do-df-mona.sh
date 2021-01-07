@@ -6,10 +6,14 @@ BuilderKernel="clang"
 export KBUILD_BUILD_VERSION=8
 
 spectrumFile="bego-on-p.rc"
-TypeBuild="Personal-Stable"
+if [[ "$KVer" == *"-rc"* ]];then
+    TypeBuild="Test-Private"
+else
+    TypeBuild="Stable"
+    FolderUp="bego-df"
+fi
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="bego-df"
 
 CompileKernel
 
