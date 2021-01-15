@@ -12,3 +12,15 @@ getInfo ">> Building kernel . . . . <<"
 FolderUp="bego-stock"
 
 CompileKernel
+
+BuilderKernel="dtc"
+changeGcc
+changeClang
+
+CompileKernel
+
+BuilderKernel="gcc"
+changeGcc
+changeClang
+
+CompileKernel
