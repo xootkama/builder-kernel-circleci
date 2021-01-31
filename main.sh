@@ -52,6 +52,8 @@ SpectrumDir=$mainDir/Spectrum
 
 GdriveDir=$mainDir/Gdrive-Uploader
 
+kDL=$mainDir/kernel-downloader # if kDLi defined
+
 useGdrive='Y'
 
 if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
@@ -183,6 +185,14 @@ tg_send_files(){
             tg_send_info "$MSG" "$1"
         else
             tg_send_info "$MSG"
+        fi
+        if [ ! -z "$kDLi" ];then
+            git clone https://$GIT_SECRETB@github.com/$GIT_USERNAME/kernel-download-generator "$kDL"
+            cd "$kDL"
+            chmod +x update.sh
+            . update.sh "$kDLi"
+            cd ..
+            rm -rf "$kDL"
         fi
     else
         curl --progress-bar -F document=@"$KernelFiles" "https://api.telegram.org/bot$BOT_TOKEN/sendDocument" \
