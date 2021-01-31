@@ -11,16 +11,19 @@ TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="bego-stock"
 
+kDLi='stock-clang'
 CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
 
+kDLi='stock-dtc'
 CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
 
+kDLi='stock-gcc'
 CompileKernel
