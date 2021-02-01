@@ -9,7 +9,7 @@ spectrumFile="none"
 TypeBuild="oldA10Only"
 TypeBuildTag="TestMemeKuI"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="bego-test"
+FolderUp="keqing-drive"
 
 # kDLi='stock-clang'
 CompileKernel
