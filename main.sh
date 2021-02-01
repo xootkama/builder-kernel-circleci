@@ -74,7 +74,7 @@ if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
         getInfo ">> cloning DragonTC clang 8 . . . <<"
         git clone https://github.com/nibaji/DragonTC-8.0 -b master $clangDir --depth=1
     fi
-    if [[ "$branch" != *"q-oss"* ]];then
+    if [[ -z "$UseOldGcc" ]];then
         mkdir $gcc64Dir
         mkdir $gcc32Dir
         getInfo ">> get gcc 10.0.2 arm linaro . . . <<"
