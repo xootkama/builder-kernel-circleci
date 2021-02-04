@@ -67,8 +67,11 @@ if [ ! -z "$1" ] && [ "$1" == 'initial' ];then
     fi
     [ -z "$BuilderKernel" ] && BuilderKernel="clang"
     if [ "$BuilderKernel" == "clang" ];then
-        getInfo ">> cloning clang 11.0.3-r383902c . . . <<"
-        git clone https://github.com/ZyCromerZ/google-clang -b 11.0.3-r383902c $clangDir --depth=1
+        getInfo ">> cloning clang 11.0.2-r383902b . . . <<"
+        # git clone https://github.com/ZyCromerZ/google-clang -b 11.0.3-r383902c $clangDir --depth=1
+        mkdir $clangDir
+        wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/android-11.0.0_r31/clang-r383902b.tar.gz
+        tar -xzvf clang-r383902b.tar.gz -C $clangDir
     fi
     if [ "$BuilderKernel" == "dtc" ];then
         getInfo ">> cloning DragonTC clang 8 . . . <<"
