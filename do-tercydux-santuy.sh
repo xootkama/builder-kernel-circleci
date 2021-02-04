@@ -9,7 +9,9 @@ spectrumFile="bego-on.rc"
 TypeBuild="Stable"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="bego-tercy"
+FolderUp="begonia-cfw-Tercydux"
+doOsdnUp=$FolderUp
+doSFUp=$FolderUp
 
 CompileKernel
 

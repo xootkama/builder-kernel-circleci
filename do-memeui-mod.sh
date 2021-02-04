@@ -1,13 +1,13 @@
 #! /bin/bash
-branch="q-oss-upstream-mod"
+branch="q-oss-upstream-mod-oc"
 BuilderKernel="clang"
 
 . main.sh 'initial'
 export KBUILD_BUILD_VERSION=11
 
 spectrumFile="none"
-TypeBuild="oldA10Only"
-TypeBuildTag="TestMemeKuI"
+TypeBuild="Stable"
+TypeBuildTag="AOSP-RIPCFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="keqing-drive"
 

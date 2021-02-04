@@ -7,24 +7,26 @@ UseOldGcc="YES"
 export KBUILD_BUILD_VERSION=10
 
 spectrumFile="none"
-TypeBuild="BRICK"
-TypeBuildTag="MemeKuI"
+TypeBuild="Stable"
+TypeBuildTag="AOSP-RIPCFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="bego-test"
+FolderUp="begonia-memeui-Stock"
+doOsdnUp=$FolderUp
+doSFUp=$FolderUp
 
 # kDLi='stock-clang'
 CompileKernel
 
-# BuilderKernel="dtc"
-# changeGcc
-# changeClang
+BuilderKernel="dtc"
+changeGcc
+changeClang
 
 # kDLi='stock-dtc'
-# CompileKernel
+CompileKernel
 
-# BuilderKernel="gcc"
-# changeGcc
-# changeClang
+BuilderKernel="gcc"
+changeGcc
+changeClang
 
 # kDLi='stock-gcc'
-# CompileKernel
+CompileKernel

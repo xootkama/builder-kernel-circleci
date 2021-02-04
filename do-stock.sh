@@ -9,7 +9,9 @@ spectrumFile="none"
 TypeBuild="STOCK"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="bego-stock"
+FolderUp="begonia-cfw-Stock"
+doOsdnUp=$FolderUp
+doSFUp=$FolderUp
 
 kDLi='stock-clang'
 CompileKernel
