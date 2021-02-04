@@ -14,19 +14,19 @@ FolderUp="begonia-memeui-Stock"
 doOsdnUp=$FolderUp
 doSFUp=$FolderUp
 
-# kDLi='stock-clang'
+kDLi='stock-memeui-clang'
 CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
 
-# kDLi='stock-dtc'
+kDLi='stock-memeui-dtc'
 CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
 
-# kDLi='stock-gcc'
+kDLi='stock-memeui-gcc'
 CompileKernel
