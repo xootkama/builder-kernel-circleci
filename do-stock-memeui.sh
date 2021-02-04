@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="q-oss-upstream"
+branch="q-oss-upstream-mod"
 BuilderKernel="clang"
 UseOldGcc="YES"
 
