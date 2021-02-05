@@ -33,6 +33,7 @@ FolderUp="begonia-memeui-Tercydux"
 doOsdnUp=$FolderUp
 doSFUp=$FolderUp
 ChangeBranch
+TypeBuildTag="AOSP-RIPCFW"
 
 CompileKernel
 
