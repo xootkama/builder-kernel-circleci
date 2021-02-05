@@ -461,9 +461,9 @@ ChangeBranch()
 {
     cd $kernelDir
     git reset --hard
-    git fetch origin "$1"
-    git checkout origin/$1
-    git branch -D "$1"
-    git checkout -b "$1"
+    git fetch origin "$branch"
+    git checkout origin/"$branch"
+    git branch -D "$branch"
+    git checkout -b "$branch"
 }
 getInfo 'include main.sh success'
