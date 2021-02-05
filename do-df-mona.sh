@@ -27,3 +27,24 @@ changeGcc
 changeClang
 
 CompileKernel
+
+branch="20210205/df-mona"
+BuilderKernel="clang"
+FolderUp="begonia-memeui-df"
+doOsdnUp=$FolderUp
+doSFUp=$FolderUp
+ChangeBranch
+
+CompileKernel
+
+BuilderKernel="dtc"
+changeGcc
+changeClang
+
+CompileKernel
+
+BuilderKernel="gcc"
+changeGcc
+changeClang
+
+CompileKernel

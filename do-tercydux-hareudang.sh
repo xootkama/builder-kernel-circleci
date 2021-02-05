@@ -26,3 +26,24 @@ changeGcc
 changeClang
 
 CompileKernel
+
+branch="20210205/Tercydux-Hareudang"
+BuilderKernel="clang"
+FolderUp="begonia-memeui-Tercydux"
+doOsdnUp=$FolderUp
+doSFUp=$FolderUp
+ChangeBranch
+
+CompileKernel
+
+BuilderKernel="dtc"
+changeGcc
+changeClang
+
+CompileKernel
+
+BuilderKernel="gcc"
+changeGcc
+changeClang
+
+CompileKernel

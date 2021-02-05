@@ -178,7 +178,7 @@ tg_send_files(){
         currentFolder="$(pwd)"
         cd $GdriveDir
         chmod +x run.sh
-        . run.sh "$KernelFiles" "$FolderUp" "$(date +"%m-%d-%Y")" "$ExFolder"
+        . run.sh "$KernelFiles" "$FolderUp" "$GetCBD" "$ExFolder"
         cd $currentFolder
 
         if [ ! -z "$1" ];then
@@ -371,6 +371,22 @@ pullSlmk(){
     TypeBuild="SLMK"
 }
 
+
+pullLmkB(){
+    cd $kernelDir
+    git reset --hard origin/$branch
+    git pull --no-commit origin 20210205/main-ALMK
+    git commit -s -m 'Pull branch 20210205/main-ALMK'
+    TypeBuild="ALMK"
+}
+pullSlmkB(){
+    cd $kernelDir
+    git reset --hard origin/$branch
+    git pull --no-commit origin 20210205/main-SLMK
+    git commit -s -m 'Pull branch 20210205/main-SLMK'
+    TypeBuild="SLMK"
+}
+
 changeGcc()
 {
     cd $kernelDir
@@ -441,5 +457,13 @@ changeClang()
     fi
     cd $kernelDir
 }
-
+ChangeBranch()
+{
+    cd $kernelDir
+    git reset --hard
+    git fetch origin "$1"
+    git checkout origin/$1
+    git branch -D "$1"
+    git checkout -b "$1"
+}
 getInfo 'include main.sh success'
