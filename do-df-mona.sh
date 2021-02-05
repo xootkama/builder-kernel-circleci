@@ -8,7 +8,7 @@ export KBUILD_BUILD_VERSION=8
 spectrumFile="bego-on-p.rc"
 TypeBuild="Stable"
 FolderUp="begonia-cfw-df"
-doOsdnUp=$FolderUp
+PostLinkNow="Y"
 doSFUp=$FolderUp
 
 TypeBuildTag="AOSP-CFW"
@@ -31,7 +31,7 @@ CompileKernel
 branch="20210205/df-mona"
 BuilderKernel="clang"
 FolderUp="begonia-memeui-df"
-doOsdnUp=$FolderUp
+UsePrivateSF="Y"
 doSFUp=$FolderUp
 ChangeBranch
 TypeBuildTag="AOSP-RIPCFW"

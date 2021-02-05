@@ -10,7 +10,7 @@ TypeBuild="Stable"
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="begonia-cfw-Tercydux"
-doOsdnUp=$FolderUp
+PostLinkNow="Y"
 doSFUp=$FolderUp
 
 CompileKernel
@@ -30,7 +30,7 @@ CompileKernel
 branch="20210205/Tercydux-Santuy"
 BuilderKernel="clang"
 FolderUp="begonia-memeui-Tercydux"
-doOsdnUp=$FolderUp
+UsePrivateSF="Y"
 doSFUp=$FolderUp
 ChangeBranch
 TypeBuildTag="AOSP-RIPCFW"
