@@ -34,6 +34,9 @@ UsePrivateSF="Y"
 doSFUp=$FolderUp
 ChangeBranch
 TypeBuildTag="AOSP-RIPCFW"
+changeGcc
+changeClang
+
 
 CompileKernel
 

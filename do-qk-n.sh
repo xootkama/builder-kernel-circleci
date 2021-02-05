@@ -50,6 +50,9 @@ doSFUp=$FolderUp
 ExFolder="N"
 ChangeBranch
 TypeBuildTag="AOSP-RIPCFW"
+changeGcc
+changeClang
+
 
 CompileKernel
 pullLmkB
