@@ -10,6 +10,7 @@ TypeBuild="Stable"
 FolderUp="begonia-cfw-df"
 PostLinkNow="Y"
 doSFUp=$FolderUp
+ExFolder="Mona"
 
 TypeBuildTag="AOSP-CFW"
 getInfo ">> Building kernel . . . . <<"

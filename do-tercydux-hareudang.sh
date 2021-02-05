@@ -12,6 +12,7 @@ getInfo ">> Building kernel . . . . <<"
 FolderUp="begonia-cfw-Tercydux"
 PostLinkNow="Y"
 doSFUp=$FolderUp
+ExFolder="Hareudang"
 
 CompileKernel
 
