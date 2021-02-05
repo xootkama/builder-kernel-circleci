@@ -66,7 +66,10 @@ else
     doOsdnUp=$FolderUp
     doSFUp=$FolderUp
     chmod +x run.sh
-    . run.sh "$KernelFiles" "$FolderUp" "$(date +"%m-%d-%Y")"
+    . config.sh "$FolderUp" "$(date +"%m-%d-%Y")"
+    RealZipName="test.txt"
+    chmod +x generate-link.sh
+    . generate-link.sh
     cd ..
     rm -rf gdgdgd
 fi
