@@ -40,16 +40,16 @@ changeGcc
 changeClang
 
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel

@@ -14,19 +14,19 @@ PostLinkNow="Y"
 doSFUp=$FolderUp
 ExFolder="Tiris"
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel
 
 branch="20210205/Tercydux-Tiris"
 BuilderKernel="clang"

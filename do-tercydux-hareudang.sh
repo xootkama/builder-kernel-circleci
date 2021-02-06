@@ -14,19 +14,19 @@ PostLinkNow="Y"
 doSFUp=$FolderUp
 ExFolder="Hareudang"
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
 
-CompileKernel
+# CompileKernel
 
 branch="20210205/Tercydux-Hareudang"
 BuilderKernel="clang"
