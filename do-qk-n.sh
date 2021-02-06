@@ -52,6 +52,7 @@ ChangeBranch
 TypeBuildTag="AOSP-RIPCFW"
 changeGcc
 changeClang
+TypeBuild="Stock-LMK"
 
 
 CompileKernel
