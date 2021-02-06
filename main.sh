@@ -358,14 +358,14 @@ MakeZip(){
 
 pullLmk(){
     cd $kernelDir
-    git reset --hard origin/$branch
+    git reset --hard $HeadCommitId
     git pull --no-commit origin 20201110/main-ALMK2
     git commit -s -m 'Pull branch 20201110/main-ALMK2'
     TypeBuild="ALMK"
 }
 pullSlmk(){
     cd $kernelDir
-    git reset --hard origin/$branch
+    git reset --hard $HeadCommitId
     git pull --no-commit origin 20201110/main-SLMK
     git commit -s -m 'Pull branch 20201110/main-SLMK'
     TypeBuild="SLMK"
@@ -374,14 +374,14 @@ pullSlmk(){
 
 pullLmkB(){
     cd $kernelDir
-    git reset --hard origin/$branch
+    git reset --hard $HeadCommitId
     git pull --no-commit origin 20210205/main-ALMK
     git commit -s -m 'Pull branch 20210205/main-ALMK'
     TypeBuild="ALMK"
 }
 pullSlmkB(){
     cd $kernelDir
-    git reset --hard origin/$branch
+    git reset --hard $HeadCommitId
     git pull --no-commit origin 20210205/main-SLMK
     git commit -s -m 'Pull branch 20210205/main-SLMK'
     TypeBuild="SLMK"
@@ -390,13 +390,13 @@ pullSlmkB(){
 changeGcc()
 {
     cd $kernelDir
-    git reset --hard origin/$branch
+    git reset --hard $HeadCommitId
     rm -rf out
-    if [ "$BuilderKernel" == "gcc" ];then
-        cuR=aarch64-none-elf
-    else
-        cuR=aarch64-linux-gnu
-    fi
+    # if [ "$BuilderKernel" == "gcc" ];then
+    #     cuR=aarch64-none-elf
+    # else
+    #     cuR=aarch64-linux-gnu
+    # fi
     # if [ "$cuR" != "$for64" ];then
     #     rm -rf $gcc32Dir $gcc64Dir
     #     if [ "$BuilderKernel" != "gcc" ];then
@@ -462,8 +462,10 @@ ChangeBranch()
     cd $kernelDir
     git reset --hard
     git fetch origin "$branch"
-    git checkout origin/"$branch"
+    git checkout FETCH_HEAD
     git branch -D "$branch"
     git checkout -b "$branch"
+    HeadCommitId=$(git log --pretty=format:'%h' -n1)
+    HeadCommitMsg=$(git log --pretty=format:'%s' -n1)
 }
 getInfo 'include main.sh success'
