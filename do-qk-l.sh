@@ -13,6 +13,7 @@ FolderUp="begonia-cfw-qk"
 doOsdnUp=$FolderUp
 doSFUp=$FolderUp
 ExFolder="L"
+PostLinkNow="Y"
 
 # CompileKernel
 pullLmk
