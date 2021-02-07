@@ -22,11 +22,11 @@ CompileKernel
 # changeClang
 
 # kDLi='stock-memeui-dtc'
-# CompileKernel
+CompileKernel
 
 # BuilderKernel="gcc"
 # changeGcc
 # changeClang
 
 # kDLi='stock-memeui-gcc'
-# CompileKernel
+CompileKernel

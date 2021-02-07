@@ -19,11 +19,11 @@ CompileKernel
 # changeClang
 
 # # kDLi='stock-dtc'
-# CompileKernel
+CompileKernel
 
 # BuilderKernel="gcc"
 # changeGcc
 # changeClang
 
 # # kDLi='stock-gcc'
-# CompileKernel
+CompileKernel

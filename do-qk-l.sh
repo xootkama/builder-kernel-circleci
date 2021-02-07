@@ -15,33 +15,33 @@ doSFUp=$FolderUp
 ExFolder="L"
 PostLinkNow="Y"
 
-# CompileKernel
+CompileKernel
 pullLmk
-# CompileKernel
+CompileKernel
 pullSlmk
-# CompileKernel
+CompileKernel
 
 BuilderKernel="dtc"
 TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
-# CompileKernel
+CompileKernel
 pullLmk
-# CompileKernel
+CompileKernel
 pullSlmk
-# CompileKernel
+CompileKernel
 
 BuilderKernel="gcc"
 TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
-# CompileKernel
+CompileKernel
 pullLmk
-# CompileKernel
+CompileKernel
 pullSlmk
-# CompileKernel
+CompileKernel
 
 branch="20210205/qk-l"
 BuilderKernel="clang"
@@ -58,28 +58,28 @@ TypeBuild="Stock-LMK"
 
 CompileKernel
 pullLmkB
-# CompileKernel
+CompileKernel
 pullSlmkB
-# CompileKernel
+CompileKernel
 
 BuilderKernel="dtc"
 TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
-# CompileKernel
+CompileKernel
 pullLmkB
-# CompileKernel
+CompileKernel
 pullSlmkB
-# CompileKernel
+CompileKernel
 
 BuilderKernel="gcc"
 TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 
-# CompileKernel
+CompileKernel
 pullLmkB
-# CompileKernel
+CompileKernel
 pullSlmkB
-# CompileKernel
+CompileKernel
