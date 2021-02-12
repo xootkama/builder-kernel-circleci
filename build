@@ -32,7 +32,11 @@ function make_changes() {
 }
 TAGS="clang"
 ListBranch=""
-for Files in do-df-keqing do-df-mona do-df-ganyu do-qk-l do-qk-n do-tercydux-hareudang do-tercydux-santuy do-tercydux-tiris
+forIN="do-df-keqing do-df-mona do-df-ganyu do-qk-l do-qk-n do-tercydux-hareudang do-tercydux-santuy do-tercydux-tiris"
+if [ ! -z "$2" ];then
+    forIN="$2"
+fi
+for Files in $forIN
 do
     if [ "$TAGS" == "all" ];then
         if [[ -e ${Files}.sh ]];then
