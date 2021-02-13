@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20201110/qk-l"
+branch="20210205/qk-l"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -15,33 +15,33 @@ doSFUp=$FolderUp
 ExFolder="L"
 PostLinkNow="Y"
 
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
+# CompileKernel
+# pullLmk
+# CompileKernel
+# pullSlmk
+# CompileKernel
 
-BuilderKernel="dtc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
+# BuilderKernel="dtc"
+# TypeBuild="Stock-LMK"
+# changeGcc
+# changeClang
 
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
+# CompileKernel
+# pullLmk
+# CompileKernel
+# pullSlmk
+# CompileKernel
 
-BuilderKernel="gcc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
+# BuilderKernel="gcc"
+# TypeBuild="Stock-LMK"
+# changeGcc
+# changeClang
 
-CompileKernel
-pullLmk
-CompileKernel
-pullSlmk
-CompileKernel
+# CompileKernel
+# pullLmk
+# CompileKernel
+# pullSlmk
+# CompileKernel
 
 branch="20210205/qk-l"
 BuilderKernel="clang"

@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20201110/Tercydux-Tiris"
+branch="20210205/Tercydux-Tiris"
 BuilderKernel="clang"
 
 . main.sh 'initial'
@@ -14,19 +14,19 @@ PostLinkNow="Y"
 doSFUp=$FolderUp
 ExFolder="Tiris"
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="dtc"
-changeGcc
-changeClang
+# BuilderKernel="dtc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="gcc"
-changeGcc
-changeClang
+# BuilderKernel="gcc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
 branch="20210205/Tercydux-Tiris"
 BuilderKernel="clang"

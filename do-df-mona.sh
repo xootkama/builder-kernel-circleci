@@ -12,22 +12,22 @@ PostLinkNow="Y"
 doSFUp=$FolderUp
 ExFolder="Mona"
 
-TypeBuildTag="AOSP-CFW"
-getInfo ">> Building kernel . . . . <<"
+# TypeBuildTag="AOSP-CFW"
+# getInfo ">> Building kernel . . . . <<"
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="dtc"
-changeGcc
-changeClang
+# BuilderKernel="dtc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="gcc"
-changeGcc
-changeClang
+# BuilderKernel="gcc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
 branch="20210205/df-mona"
 BuilderKernel="clang"

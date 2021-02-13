@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20201110/Tercydux-Santuy"
+branch="20210205/Tercydux-Santuy"
 BuilderKernel="clang"
 
 . main.sh 'initial'
@@ -14,19 +14,19 @@ PostLinkNow="Y"
 doSFUp=$FolderUp
 ExFolder="Santuy"
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="dtc"
-changeGcc
-changeClang
+# BuilderKernel="dtc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
-BuilderKernel="gcc"
-changeGcc
-changeClang
+# BuilderKernel="gcc"
+# changeGcc
+# changeClang
 
-CompileKernel
+# CompileKernel
 
 branch="20210205/Tercydux-Santuy"
 BuilderKernel="clang"
