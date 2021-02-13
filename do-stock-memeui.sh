@@ -1,7 +1,6 @@
 #! /bin/bash
 branch="q-oss-upstream-mod"
 BuilderKernel="clang"
-UseOldGcc="YES"
 
 . main.sh 'initial'
 export KBUILD_BUILD_VERSION=10
