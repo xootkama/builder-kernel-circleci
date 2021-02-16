@@ -7,7 +7,7 @@ export KBUILD_BUILD_VERSION=1
 
 spectrumFile="none"
 TypeBuild="Stable"
-TypeBuildTag="TestTod"
+TypeBuildTag="STOCK"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="letoy-stock"
 doSFUp=$FolderUp
