@@ -1,30 +1,32 @@
 #! /bin/bash
-branch="eleven-upstream"
+branch="eleven-upstream-mod"
 BuilderKernel="clang"
-UseOldGcc="Y"
-. main-letoy.sh 'initial'
-export KBUILD_BUILD_VERSION=10
+# UseOldGcc="Y"
+. main-letoy.sh 'initial' 
+export KBUILD_BUILD_VERSION=1
 
 spectrumFile="none"
 TypeBuild="Stable"
 TypeBuildTag="TestTod"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="keqing-drive"
+FolderUp="letoy-stock"
 doSFUp=$FolderUp
+doOsdnUp=$FolderUp
+PostLinkNow="Y"
 
 # kDLi='stock-memeui-clang'
 CompileKernel
 
-# BuilderKernel="dtc"
-# changeGcc
-# changeClang
+BuilderKernel="dtc"
+changeGcc
+changeClang
 
 # kDLi='stock-memeui-dtc'
-# CompileKernel
+CompileKernel
 
-# BuilderKernel="gcc"
-# changeGcc
-# changeClang
+BuilderKernel="gcc"
+changeGcc
+changeClang
 
 # kDLi='stock-memeui-gcc'
-# CompileKernel
+CompileKernel
