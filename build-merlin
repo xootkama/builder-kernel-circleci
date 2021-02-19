@@ -32,7 +32,7 @@ function make_changes() {
 }
 TAGS="clang"
 ListBranch=""
-forIN="do-merlin-neutrino-n"
+forIN="do-merlin-neutrino-n do-merlin-neutrino-x"
 if [ ! -z "$2" ];then
     forIN="$2"
 fi
