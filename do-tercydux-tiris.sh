@@ -2,10 +2,10 @@
 branch="20210205/neutrino-a"
 BuilderKernel="clang"
 
-. main.sh 'initial'
+. main.sh 'initial' 'full'
 export KBUILD_BUILD_VERSION=4
 
-spectrumFile="bego-on.rc"
+spectrumFile="bego-on-p.rc"
 TypeBuild="Stable"
 TypeBuildTag="NON-CFW"
 getInfo ">> Building kernel . . . . <<"
