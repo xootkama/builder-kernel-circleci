@@ -22,9 +22,18 @@
 # - branch
 # - spectrumFile
 # Then call CompileKernel and done
-if [ $CIRCLE_BRANCH == 'master' ];then
+if [ ! -z "$CIRCLE_BRANCH" ] && [ "$CIRCLE_BRANCH" == 'master' ];then
     exit
 fi
+if [ ! -z "$DRONE_REPO_BRANCH" ] && [ "$DRONE_REPO_BRANCH" == 'master' ];then
+    exit
+fi
+check=$(ls /usr/lib/x86_64-linux-gnu | grep libisl.so -m1)
+if [ ! -z "$check" ]; then if [ "$check" != "libisl.so.15" ]; then cp -af /usr/lib/x86_64-linux-gnu/$check /usr/lib/x86_64-linux-gnu/libisl.so.15; fi; fi
+check=$(ls /usr/lib/x86_64-linux-gnu | grep libz3.so -m1)
+if [ ! -z "$check" ]; then if [ "$check" != "libz3.so.4.8" ]; then cp -af /usr/lib/x86_64-linux-gnu/$check /usr/lib/x86_64-linux-gnu/libz3.so.4.8; fi; fi
+
+
 if [ "$BuilderKernel" != "clang" ] && [ "$BuilderKernel" != "dtc" ] && [ "$BuilderKernel" != "gcc" ] ;then
     exit
 fi
@@ -254,6 +263,12 @@ CompileKernel(){
     fi
     rm -rf out # always remove out directory :V
     BUILD_START=$(date +"%s")
+    if [ ! -z "$DRONE_BUILD_NUMBER" ];then
+        CIRCLE_BUILD_NUM="$DRONE_BUILD_NUMBER"
+        CIRCLE_BUILD_URL="https://cloud.drone.io/Zero-NEET-Alfa/yayaya/$DRONE_BUILD_NUMBER/1/2"
+        doOsdnUp=""
+        doSFUp=""
+    fi
     if [ "$BuilderKernel" == "gcc" ];then
         MSG="<b>🔨 New Kernel On The Way</b>%0A<b>Device: $DEVICE</b>%0A<b>Codename: $CODENAME</b>%0A<b>Branch: $branch</b>%0A<b>Build Date: $GetCBD </b>%0A<b>Build Number: $CIRCLE_BUILD_NUM </b>%0A<b>Build Link Progress:</b><a href='$CIRCLE_BUILD_URL'> Check Here </a>%0A<b>Host Core Count : $TotalCores cores </b>%0A<b>Kernel Version: $KVer</b>%0A<b>Last Commit-Id: $HeadCommitId </b>%0A<b>Last Commit-Message: $HeadCommitMsg </b>%0A<b>Builder Info: </b>%0A<code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>%0A<code>- $gcc64Type </code>%0A<code>- $gcc32Type </code>%0A<code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>%0A%0A #$TypeBuildTag  #$TypeBuild"
     else
