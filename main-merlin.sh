@@ -374,31 +374,15 @@ MakeZip(){
 pullLmk(){
     cd $kernelDir
     git reset --hard $HeadCommitId
-    git pull --no-commit origin 20201110/main-ALMK2
-    git commit -s -m 'Pull branch 20201110/main-ALMK2'
+    git pull --no-commit origin 20210216/main-ALMK
+    git commit -s -m 'Pull branch 20210216/main-ALMK'
     TypeBuild="ALMK"
 }
 pullSlmk(){
     cd $kernelDir
     git reset --hard $HeadCommitId
-    git pull --no-commit origin 20201110/main-SLMK
-    git commit -s -m 'Pull branch 20201110/main-SLMK'
-    TypeBuild="SLMK"
-}
-
-
-pullLmkB(){
-    cd $kernelDir
-    git reset --hard $HeadCommitId
-    git pull --no-commit origin 20210205/main-ALMK
-    git commit -s -m 'Pull branch 20210205/main-ALMK'
-    TypeBuild="ALMK"
-}
-pullSlmkB(){
-    cd $kernelDir
-    git reset --hard $HeadCommitId
-    git pull --no-commit origin 20210205/main-SLMK
-    git commit -s -m 'Pull branch 20210205/main-SLMK'
+    git pull --no-commit origin 20210216/main-SLMK
+    git commit -s -m 'Pull branch 20210216/main-SLMK'
     TypeBuild="SLMK"
 }
 
