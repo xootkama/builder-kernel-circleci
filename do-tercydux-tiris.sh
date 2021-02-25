@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20210205/neutrino-6"
+branch="20210205/neutrino-3"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -13,9 +13,9 @@ FolderUp="begonia-test"
 PostLinkNow="Y"
 # ExFolder="Hu"
 
-CompileKernel
-pullLmkB
-CompileKernel
+# CompileKernel
+# pullLmkB
+# CompileKernel
 pullSlmkB
 CompileKernel
 

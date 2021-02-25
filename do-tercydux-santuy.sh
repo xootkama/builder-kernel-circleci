@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20201110/neutrino-6"
+branch="20201110/neutrino-3"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -14,8 +14,8 @@ PostLinkNow="Y"
 # ExFolder="Hu"
 
 # CompileKernel
-pullLmk
-CompileKernel
+# pullLmk
+# CompileKernel
 pullSlmk
 CompileKernel
 
