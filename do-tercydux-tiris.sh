@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20210205/neutrino-1"
+branch="20210205/neutrino-6"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -14,36 +14,36 @@ PostLinkNow="Y"
 # ExFolder="Hu"
 
 CompileKernel
-# pullLmkB
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
+
+# branch="20210205/neutrino-2"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
 # CompileKernel
-# pullSlmkB
+
+
+# branch="20210205/neutrino-3"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
 # CompileKernel
 
-branch="20210205/neutrino-2"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+
+# branch="20210205/neutrino-4"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
 
 
-branch="20210205/neutrino-3"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+# branch="20210205/neutrino-5"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
 
 
-branch="20210205/neutrino-4"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
-
-
-branch="20210205/neutrino-5"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
-
-
-branch="20210205/neutrino-6"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+# branch="20210205/neutrino-6"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel

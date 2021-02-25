@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20201110/neutrino-1"
+branch="20201110/neutrino-6"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -13,37 +13,37 @@ FolderUp="begonia-test"
 PostLinkNow="Y"
 # ExFolder="Hu"
 
-CompileKernel
-# pullLmkB
 # CompileKernel
-# pullSlmkB
+pullLmk
+CompileKernel
+pullSlmk
+CompileKernel
+
+# branch="20201110/neutrino-2"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
 # CompileKernel
 
-branch="20201110/neutrino-2"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+
+# branch="20201110/neutrino-3"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
 
 
-branch="20201110/neutrino-3"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+# branch="20201110/neutrino-4"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
 
 
-branch="20201110/neutrino-4"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+# branch="20201110/neutrino-5"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
 
 
-branch="20201110/neutrino-5"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
-
-
-branch="20201110/neutrino-6"
-ChangeBranch
-TypeBuild="Stock-LMK"
-CompileKernel
+# branch="20201110/neutrino-6"
+# ChangeBranch
+# TypeBuild="Stock-LMK"
+# CompileKernel
