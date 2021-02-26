@@ -14,33 +14,33 @@ doSFUp=$FolderUp
 PostLinkNow="Y"
 ExFolder="HY"
 
-CompileKernel
-pullLmkB
-CompileKernel
-pullSlmkB
-CompileKernel
+# CompileKernel
+# pullLmkB
+# CompileKernel
+# pullSlmkB
+# CompileKernel
 
-BuilderKernel="dtc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-ChangeBranch
+# BuilderKernel="dtc"
+# TypeBuild="Stock-LMK"
+# changeGcc
+# changeClang
+# ChangeBranch
 
-CompileKernel
-pullLmkB
-CompileKernel
-pullSlmkB
-CompileKernel
+# CompileKernel
+# pullLmkB
+# CompileKernel
+# pullSlmkB
+# CompileKernel
 
-BuilderKernel="gcc"
-TypeBuild="Stock-LMK"
-changeGcc
-changeClang
-ChangeBranch
+# BuilderKernel="gcc"
+# TypeBuild="Stock-LMK"
+# changeGcc
+# changeClang
+# ChangeBranch
 
-CompileKernel
-pullLmkB
-CompileKernel
+# CompileKernel
+# pullLmkB
+# CompileKernel
 pullSlmkB
 CompileKernel
 
