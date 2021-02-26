@@ -7,7 +7,7 @@ export KBUILD_BUILD_VERSION=11
 
 spectrumFile="none"
 TypeBuild="Stable"
-TypeBuildTag="AOSP-RIPCFW"
+TypeBuildTag="NON-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="keqing-drive"
 

@@ -1,5 +1,5 @@
 #! /bin/bash
-branch="20210205/qk-l"
+branch="20201110/qk-l"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
@@ -50,7 +50,7 @@ doOsdnUp=$FolderUp
 doSFUp=$FolderUp
 ExFolder="L"
 ChangeBranch
-TypeBuildTag="AOSP-RIPCFW"
+TypeBuildTag="NON-CFW"
 changeGcc
 changeClang
 TypeBuild="Stock-LMK"

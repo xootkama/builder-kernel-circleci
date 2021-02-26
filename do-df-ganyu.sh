@@ -7,10 +7,10 @@ export KBUILD_BUILD_VERSION=10
 
 spectrumFile="bego-on-p.rc"
 TypeBuild="Stock-LMK"
-TypeBuildTag="NON-CFW-TEST"
+TypeBuildTag="NON-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="begonia-memeui-neutrino"
-doOsdnUp=$FolderUp
+doSFUp=$FolderUp
 PostLinkNow="Y"
 ExFolder="HZ"
 
@@ -21,6 +21,7 @@ pullSlmkB
 CompileKernel
 
 BuilderKernel="dtc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 ChangeBranch
@@ -32,6 +33,7 @@ pullSlmkB
 CompileKernel
 
 BuilderKernel="gcc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 ChangeBranch
@@ -46,33 +48,35 @@ branch="20201110/neutrino-6"
 TypeBuild="Stock-LMK"
 TypeBuildTag="AOSP-CFW"
 FolderUp="begonia-cfw-neutrino"
-doOsdnUp=$FolderUp
+doSFUp=$FolderUp
 ChangeBranch
 
 CompileKernel
-pullLmkB
+pullLmk
 CompileKernel
-pullSlmkB
+pullSlmk
 CompileKernel
 
 BuilderKernel="dtc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 ChangeBranch
 
 CompileKernel
-pullLmkB
+pullLmk
 CompileKernel
-pullSlmkB
+pullSlmk
 CompileKernel
 
 BuilderKernel="gcc"
+TypeBuild="Stock-LMK"
 changeGcc
 changeClang
 ChangeBranch
 
 CompileKernel
-pullLmkB
+pullLmk
 CompileKernel
-pullSlmkB
+pullSlmk
 CompileKernel
