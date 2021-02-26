@@ -7,7 +7,7 @@ export KBUILD_BUILD_VERSION=5
 
 spectrumFile="bego-on-p.rc"
 TypeBuild="Stock-LMK"
-TypeBuildTag="NON-CFW-TEST"
+TypeBuildTag="NON-CFW"
 getInfo ">> Building kernel . . . . <<"
 FolderUp="begonia-memeui-neutrino"
 doOsdnUp=$FolderUp
