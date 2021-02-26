@@ -1,49 +1,78 @@
 #! /bin/bash
-branch="20201110/neutrino-3"
+branch="20210205/neutrino-2"
 BuilderKernel="clang"
 
 . main.sh 'initial' 'full'
-export KBUILD_BUILD_VERSION=4
+export KBUILD_BUILD_VERSION=6
 
 spectrumFile="bego-on-p.rc"
 TypeBuild="Stock-LMK"
-TypeBuildTag="CFW-TEST"
+TypeBuildTag="NON-CFW-TEST"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="begonia-test"
+FolderUp="begonia-memeui-neutrino"
+doOsdnUp=$FolderUp
 PostLinkNow="Y"
-# ExFolder="Hu"
+ExFolder="LY"
 
-# CompileKernel
-# pullLmk
-# CompileKernel
-pullSlmk
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
 CompileKernel
 
-# branch="20201110/neutrino-2"
-# ChangeBranch
-# TypeBuild="Stock-LMK"
-# CompileKernel
+BuilderKernel="dtc"
+changeGcc
+changeClang
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
 
-# branch="20201110/neutrino-3"
-# ChangeBranch
-# TypeBuild="Stock-LMK"
-# CompileKernel
+BuilderKernel="gcc"
+changeGcc
+changeClang
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
 
-# branch="20201110/neutrino-4"
-# ChangeBranch
-# TypeBuild="Stock-LMK"
-# CompileKernel
+branch="20201110/neutrino-2"
+TypeBuild="Stock-LMK"
+TypeBuildTag="AOSP-CFW"
+FolderUp="begonia-cfw-neutrino"
+doOsdnUp=$FolderUp
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
 
-# branch="20201110/neutrino-5"
-# ChangeBranch
-# TypeBuild="Stock-LMK"
-# CompileKernel
+BuilderKernel="dtc"
+changeGcc
+changeClang
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
 
-# branch="20201110/neutrino-6"
-# ChangeBranch
-# TypeBuild="Stock-LMK"
-# CompileKernel
+BuilderKernel="gcc"
+changeGcc
+changeClang
+ChangeBranch
+
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel

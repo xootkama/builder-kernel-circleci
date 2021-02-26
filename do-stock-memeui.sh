@@ -3,7 +3,7 @@ branch="q-oss-upstream-mod"
 BuilderKernel="clang"
 
 . main.sh 'initial'
-export KBUILD_BUILD_VERSION=10
+export KBUILD_BUILD_VERSION=3
 
 spectrumFile="none"
 TypeBuild="Stable"

@@ -1,54 +1,78 @@
 #! /bin/bash
-branch="20210205/Tercydux-Hareudang"
+branch="20210205/neutrino-3"
 BuilderKernel="clang"
 
-. main.sh 'initial'
-export KBUILD_BUILD_VERSION=6
+. main.sh 'initial' 'full'
+export KBUILD_BUILD_VERSION=7
 
-spectrumFile="bego-on.rc"
-TypeBuild="Stable"
-TypeBuildTag="AOSP-CFW"
+spectrumFile="bego-on-p.rc"
+TypeBuild="Stock-LMK"
+TypeBuildTag="NON-CFW-TEST"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="begonia-cfw-Tercydux"
+FolderUp="begonia-memeui-neutrino"
+doOsdnUp=$FolderUp
 PostLinkNow="Y"
-doSFUp=$FolderUp
-ExFolder="Hareudang"
+ExFolder="LZ"
 
-# CompileKernel
-
-# BuilderKernel="dtc"
-# changeGcc
-# changeClang
-
-# CompileKernel
-
-# BuilderKernel="gcc"
-# changeGcc
-# changeClang
-
-# CompileKernel
-
-branch="20210205/Tercydux-Hareudang"
-BuilderKernel="clang"
-FolderUp="begonia-memeui-Tercydux"
-UsePrivateSF="Y"
-doSFUp=$FolderUp
-ChangeBranch
-TypeBuildTag="AOSP-RIPCFW"
-changeGcc
-changeClang
-
-
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
 CompileKernel
 
 BuilderKernel="dtc"
 changeGcc
 changeClang
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
 CompileKernel
 
 BuilderKernel="gcc"
 changeGcc
 changeClang
+ChangeBranch
 
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
+
+branch="20201110/neutrino-3"
+TypeBuild="Stock-LMK"
+TypeBuildTag="AOSP-CFW"
+FolderUp="begonia-cfw-neutrino"
+doOsdnUp=$FolderUp
+ChangeBranch
+
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
+
+BuilderKernel="dtc"
+changeGcc
+changeClang
+ChangeBranch
+
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
+CompileKernel
+
+BuilderKernel="gcc"
+changeGcc
+changeClang
+ChangeBranch
+
+CompileKernel
+pullLmkB
+CompileKernel
+pullSlmkB
 CompileKernel

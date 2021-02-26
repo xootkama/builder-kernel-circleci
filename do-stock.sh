@@ -3,7 +3,7 @@ branch="20200907/root-upstream-mod"
 BuilderKernel="clang"
 
 . main.sh 'initial'
-export KBUILD_BUILD_VERSION=3
+export KBUILD_BUILD_VERSION=4
 
 spectrumFile="none"
 TypeBuild="STOCK"
