@@ -280,8 +280,8 @@ CompileKernel(){
         tg_send_info "$MSG" 
     fi
 
-    git fetch origin 1e7d6dadee67ca2642249934b5f844de8e8d35ee --depth=2
-    git cherry-pick 1e7d6dadee67ca2642249934b5f844de8e8d35ee
+    git fetch origin 88bf1347e1591fbf4d4c5993bb8bff1d62b9d1fb --depth=2
+    git cherry-pick 88bf1347e1591fbf4d4c5993bb8bff1d62b9d1fb
 
     make -j${TotalCores}  O=out ARCH="$ARCH" "$DEFFCONFIG"
     if [ "$BuilderKernel" == "gcc" ];then
