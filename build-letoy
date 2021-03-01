@@ -32,7 +32,7 @@ function make_changes() {
 }
 TAGS="clang"
 ListBranch=""
-forIN="do-letoy-neutrino-n do-letoy-neutrino-x"
+forIN="do-letoy-neu-1 do-letoy-neu-2 do-letoy-neu-3 do-letoy-neu-4 do-letoy-neu-5 do-letoy-neu-6 do-do-letoy-qk-l do-do-letoy-qk-n"
 if [ ! -z "$2" ];then
     forIN="$2"
 fi
@@ -64,4 +64,4 @@ if [ ! -z "$1" ];then
 else
     SetRemote="origin"
 fi
-git push -f $SetRemote $ListBranch
+git push -f origin $ListBranch
