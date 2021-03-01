@@ -2,19 +2,20 @@
 branch="eleven-upstream-mod"
 BuilderKernel="clang"
 # UseOldGcc="Y"
-. main-merlin.sh 'initial' 
-export KBUILD_BUILD_VERSION=1
+. main-merlin.sh 'initial' 'full'
+# export KBUILD_BUILD_VERSION=1
 
 spectrumFile="none"
 TypeBuild="Stable"
 TypeBuildTag="STOCK"
 getInfo ">> Building kernel . . . . <<"
-FolderUp="keqing-drive"
+FolderUp="merlin-stock"
 doSFUp=$FolderUp
 doOsdnUp=$FolderUp
-# PostLinkNow="Y"
+PostLinkNow="Y"
 
 # kDLi='stock-memeui-clang'
+pullVdsoStock
 CompileKernel
 
 BuilderKernel="dtc"
@@ -22,6 +23,7 @@ changeGcc
 changeClang
 
 # kDLi='stock-memeui-dtc'
+pullVdsoStock
 CompileKernel
 
 BuilderKernel="gcc"
@@ -29,4 +31,5 @@ changeGcc
 changeClang
 
 # kDLi='stock-memeui-gcc'
+pullVdsoStock
 CompileKernel

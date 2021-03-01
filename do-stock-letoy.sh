@@ -2,8 +2,8 @@
 branch="eleven-upstream-mod"
 BuilderKernel="clang"
 # UseOldGcc="Y"
-. main-letoy.sh 'initial' 
-export KBUILD_BUILD_VERSION=1
+. main-letoy.sh 'initial' 'full'
+# export KBUILD_BUILD_VERSION=1
 
 spectrumFile="none"
 TypeBuild="Stable"
@@ -15,6 +15,7 @@ doOsdnUp=$FolderUp
 PostLinkNow="Y"
 
 # kDLi='stock-memeui-clang'
+pullVdsoStock
 CompileKernel
 
 BuilderKernel="dtc"
@@ -22,6 +23,7 @@ changeGcc
 changeClang
 
 # kDLi='stock-memeui-dtc'
+pullVdsoStock
 CompileKernel
 
 BuilderKernel="gcc"
@@ -29,4 +31,5 @@ changeGcc
 changeClang
 
 # kDLi='stock-memeui-gcc'
+pullVdsoStock
 CompileKernel

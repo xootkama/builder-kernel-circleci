@@ -390,6 +390,12 @@ pullSlmk(){
     TypeBuild="SLMK"
 }
 
+pullVdsoStock(){
+    cd $kernelDir
+    git pull --no-commit origin eleven-upstream-mod-vdso32 --no-ff
+    git commit -s -m 'Pull branch eleven-upstream-mod-vdso32'
+}
+
 changeGcc()
 {
     cd $kernelDir
