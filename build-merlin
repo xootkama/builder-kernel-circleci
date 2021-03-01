@@ -27,12 +27,24 @@ function update_fileB() {
     fi
 }
 function make_changes() {
-    git checkout master && git checkout -b $1-$2
+    git checkout master-temp && git checkout -b $1-$2
     git checkout $1-$2 && update_file 'main.sh' "$1.sh" './.circleci/config.yml' && update_file 'main.sh' "$1.sh"'"' './.drone.yml'
 }
+
+
+git branch -D master-temp
+git checkout -b master-temp
+cp -af do-merlin-qk-l.sh do-qk-l.sh
+cp -af do-merlin-qk-n.sh do-qk-n.sh
+cp -af do-merlin-neu-1.sh do-df-keqing.sh
+cp -af do-merlin-neu-3.sh do-df-mona.sh
+cp -af do-merlin-neu-4.sh do-tercydux-santuy.sh
+cp -af do-merlin-neu-6.sh do-tercydux-tiris.sh
+git add . && git commit -s -m 'auto cp files . . . .'
+
 TAGS="clang"
 ListBranch=""
-forIN="do-merlin-neutrino-n do-merlin-neutrino-x"
+forIN="do-df-keqing do-df-mona do-qk-l do-qk-n do-tercydux-santuy do-tercydux-tiris"
 if [ ! -z "$2" ];then
     forIN="$2"
 fi
@@ -64,4 +76,7 @@ if [ ! -z "$1" ];then
 else
     SetRemote="origin"
 fi
-git push -f $SetRemote $ListBranch
+git push -f neet $ListBranch
+
+git checkout master
+git branch -D master-temp
