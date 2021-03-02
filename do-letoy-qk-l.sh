@@ -1,6 +1,6 @@
 #! /bin/bash
 branch="20210228/qk-l"
-BuilderKernel="gcc"
+BuilderKernel="clang"
 # UseOldGcc="Y"
 . main-letoy.sh 'initial' 'full'
 # export KBUILD_BUILD_VERSION=1
