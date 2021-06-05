@@ -5,14 +5,15 @@ IncludeFiles "${MainPath}/device/x01bd.sh"
 CustomUploader="Y"
 UseSpectrum="Y"
 IncludeFiles "${MainPath}/misc/kernel.sh" "https://${GIT_SECRET}@github.com/${GIT_USERNAME}/x01bd_kernel"
-FolderUp="shared-file"
+FolderUp="xobod-q"
+doSFUp=$FolderUp
 TypeBuildTag="[Q]"
 spectrumFile="xobod-base.rc"
 
 CloneKernel "--depth=1"
 CloneCompiledGccTwelve
-# CloneProtonClang
-# CompileClangKernel && CleanOut
-# CloneDTCClang
-# CompileClangKernel && CleanOut
+CloneProtonClang
+CompileClangKernel && CleanOut
+CloneDTCClang
+CompileClangKernel && CleanOut
 CompileGccKernel && CleanOut
