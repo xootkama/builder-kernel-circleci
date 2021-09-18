@@ -1,19 +1,18 @@
 #! /bin/bash
-KernelBranch="20210205/neutrino-2"
+KernelBranch="20201110/neutrino-2"
 
-IncludeFiles "${MainPath}/device/begonia-q-oss.sh"
+IncludeFiles "${MainPath}/device/begonia-cfw.sh"
 CustomUploader="Y"
 UseSpectrum="Y"
 IncludeFiles "${MainPath}/misc/kernel.sh" "https://${GIT_SECRET}@github.com/${GIT_USERNAME}/begonia_kernel"
 spectrumFile="bego-on-p.rc"
 FolderUp="shared-file"
-TypeBuildTag="[Q-OSS][Stock-LMK]"
+TypeBuildTag="[CFW][Stock-LMK]"
 
 CloneKernel
+# CloneCompiledGccEleven
 CloneCompiledGccEleven
-CloneThirteenGugelClang
-# CloneGCCOld
-# CloneOldDTCClang
+CloneProtonClang
 # CloneDTCClang
 PullLtoSlmk
 # CompileClangKernel && CleanOut
