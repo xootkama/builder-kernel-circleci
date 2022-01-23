@@ -1,15 +1,15 @@
 #! /bin/bash
 
-DEVICE="Asus Zenfone Max Pro M2"
-CODENAME="X01BD"
-SaveChatID="-1001301538740"
+DEVICE="Realme 3 Pro"
+CODENAME="RMX1851"
+SaveChatID="-1001688909425"
 ARCH="arm64"
-TypeBuild="Stable"
-DEFFCONFIG="X01BD_defconfig"
+TypeBuild="Failing"
+DEFFCONFIG="realme_sdm710_defconfig"
 GetBD=$(date +"%m%d")
 GetCBD=$(date +"%Y-%m-%d")
 TypeBuildTag=""
-FolderUp="xobod-private"
+FolderUp="RMX1851-private"
 ExFolder=""
 AnyKernelBranch="master"
 FirstSendInfoLink="N"
