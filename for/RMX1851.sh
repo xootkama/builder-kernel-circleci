@@ -1,5 +1,5 @@
 #! /bin/bash
-KernelBranch="20210304/q/main"
+KernelBranch="when"
 
 IncludeFiles "${MainPath}/device/RMX1851.sh"
 CustomUploader="Y"
