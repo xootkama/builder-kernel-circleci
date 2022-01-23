@@ -1,9 +1,8 @@
 #! /bin/bash
 KernelBranch="20210304/q/main"
 
-IncludeFiles "${MainPath}/device/x01bd.sh"
+IncludeFiles "${MainPath}/device/RMX1851.sh"
 CustomUploader="Y"
-IncludeFiles "${MainPath}/misc/kernel.sh" "https://${GIT_SECRET}@github.com/${GIT_USERNAME}/x01bd_kernel"
 FolderUp="keqing-drive"
 TypeBuildTag="[Q]"
 
